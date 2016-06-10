@@ -13,12 +13,12 @@ import java.util.Date;
 
 import org.junit.Test;
 
-public class JT {
+public class junitTest {
 
 	@Test
 	public void test() {
-//		fail("Not yet implemented");
-		String path="C:\\Users\\Administrator\\Desktop\\Test\\";
+//			fail("Not yet implemented");
+		String path="C:\\Users\\Matt\\Desktop\\Test\\";
 		DateFormat dateFormat = new SimpleDateFormat("MM_dd_HH_mm_ss");
 		Date d = new Date();
 		
