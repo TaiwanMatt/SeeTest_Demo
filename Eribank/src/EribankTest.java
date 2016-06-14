@@ -11,19 +11,19 @@ import org.junit.*;
 public class EribankTest {
   private String host = "localhost";
   private int port = 8889;
-  private String projectBaseDirectory = "C:\\Users\\SeeTest\\workspace\\project2";
+  //private String projectBaseDirectory = "C:\\Users\\SeeTest\\workspace\\project2";
   protected Client client = null;
 
   @Before
   public void setUp(){
       client = new Client(host, port, true);
-      client.setProjectBaseDirectory(projectBaseDirectory);
+      //client.setProjectBaseDirectory(projectBaseDirectory);
       client.setReporter("xml", "reports", "Untitled");
   }
 
   @Test
   public void testUntitled(){
-      client.setDevice("adb:matt");
+      client.setDevice("adb:Olsen");
       client.launch("com.experitest.ExperiBank/.LoginActivity", true, true);
       client.elementSendText("NATIVE", "xpath=//*[@hint='Username']", 0, "company");
       client.elementSendText("NATIVE", "hint=Password", 0, "company");
