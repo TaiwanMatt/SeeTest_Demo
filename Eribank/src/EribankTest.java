@@ -1,6 +1,12 @@
 import static org.junit.Assert.*;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
 
 //package <set your test package>;
 import com.experitest.client.*;
@@ -8,12 +14,21 @@ import org.junit.*;
 /**
 *
 */
+@RunWith(value = Parameterized.class)
 public class EribankTest {
+	@Parameters
+	public static List<Object[]> data(){
+		Object[][] data = new Object[][] {{"Olsen"}};
+		return Arrays.asList(data);
+	}
   private String host = "localhost";
   private int port = 8889;
   //private String projectBaseDirectory = "C:\\Users\\SeeTest\\workspace\\project2";
   protected Client client = null;
-
+  private String device;
+  public EribankTest(String arg){
+	  device=arg;
+  }
   @Before
   public void setUp(){
       client = new Client(host, port, true);
@@ -23,7 +38,7 @@ public class EribankTest {
 
   @Test
   public void testUntitled(){
-      client.setDevice("adb:Olsen");
+      client.setDevice("adb:"+device);
       client.launch("com.experitest.ExperiBank/.LoginActivity", true, true);
       client.elementSendText("NATIVE", "xpath=//*[@hint='Username']", 0, "company");
       client.elementSendText("NATIVE", "hint=Password", 0, "company");
