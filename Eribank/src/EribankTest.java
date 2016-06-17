@@ -27,7 +27,7 @@ public class EribankTest {
 //	}
   private String host = "localhost";
   private int port = 8889;
-  //private String projectBaseDirectory = "C:\\Users\\SeeTest\\workspace\\project2";
+  private String projectBaseDirectory = "C:\\Program Files (x86)\\Jenkins\\jobs\\Eribank\\workspace\\Eribank";
   protected Client client = null;
 //  private String device;
 //  public EribankTest(String arg){
@@ -36,7 +36,7 @@ public class EribankTest {
   @Before
   public void setUp(){
       client = new Client(host, port, true);
-      //client.setProjectBaseDirectory(projectBaseDirectory);
+      client.setProjectBaseDirectory(projectBaseDirectory);
       client.setReporter("xml", "reports", "Untitled");
   }
 
