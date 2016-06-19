@@ -55,7 +55,8 @@ public class EribankTest {
 //	}
 //	  String device=properties.getProperty("dev");
 	  String device=System.getProperty("device");
-      client.setDevice("adb:"+device);
+	  System.out.println(device);
+      client.setDevice("adb:Olsen");
       client.launch("com.experitest.ExperiBank/.LoginActivity", true, true);
       client.elementSendText("NATIVE", "xpath=//*[@hint='Username']", 0, "company");
       client.elementSendText("NATIVE", "hint=Password", 0, "company");
