@@ -1,5 +1,6 @@
 import static org.junit.Assert.*;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -37,7 +38,9 @@ public class EribankTest {
   public void setUp(){
       client = new Client(host, port, true);
       client.setProjectBaseDirectory(projectBaseDirectory);
-      client.setReporter("xml", "reports", "Untitled");
+      File reports=new File("C:\\Program Files (x86)\\Jenkins\\jobs\\Eribank\\workspace\\Eribank","reports");
+      reports.mkdirs();
+      client.setReporter("xml", reports.getAbsolutePath(), "EribankTest");
   }
 
   @Test
