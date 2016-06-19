@@ -27,7 +27,7 @@ public class EribankTest {
 //	}
   private String host = "localhost";
   private int port = 8889;
-  private String projectBaseDirectory = "C:\\Program Files (x86)\\Jenkins\\jobs\\Eribank\\workspace\\Eribank";
+  private String projectBaseDirectory = "C:\\Users\\Matt\\workspace\\project2";
   protected Client client = null;
 //  private String device;
 //  public EribankTest(String arg){
