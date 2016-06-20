@@ -38,7 +38,7 @@ public class EribankTest {
   public void setUp(){
       client = new Client(host, port, true);
       client.setProjectBaseDirectory(projectBaseDirectory);
-      File reports=new File("C:\\Program Files (x86)\\Jenkins\\jobs\\Eribank\\workspace\\Eribank","reports");
+      File reports=new File("C:\\Users\\Matt\\Desktop","reports");
       reports.mkdirs();
       client.setReporter("xml", reports.getAbsolutePath(), "EribankTest");
   }
